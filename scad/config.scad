@@ -56,8 +56,8 @@ m4_screw_radius = 2;
 // ---------------------------------------------------------------- //
 // horizontal plate
 // ---------------------------------------------------------------- //
-horizontal_plate_width         = 390;              // 
-horizontal_plate_height        = 440;              // 
+horizontal_plate_width         = 410;              // 
+horizontal_plate_height        = 460;              // 
 horizontal_plate_borders       = [40, 82, 40, 82]; // borders weight       [top, right, bottom, left]
 horizontal_plate_outer_corners = [10, 10, 10, 10]; // outer corners radius [topLeft, topRight, bottomRight, bottoLeft]
 horizontal_plate_inner_corners = [30, 30, 30, 30]; // inner corners radius [topLeft, topRight, bottomRight, bottoLeft]
@@ -135,15 +135,15 @@ triangle_holes_margin = 20;              // screws margin (from z triangle pocke
 // ---------------------------------------------------------------- //
 // y carriage
 // ---------------------------------------------------------------- //
-y_carriage_corners_holes_spacing = [209, 209];      // [x, y] axis to axis
+y_carriage_corners_holes_spacing = [170, 170];      // [x, y] axis to axis
 y_carriage_outer_offset          = [11, 11];        // [x, y]
-y_carriage_holes_radius          = m3_screw_radius; //
+y_carriage_holes_radius          = m4_screw_radius; //
 y_carriage_ergots_radius         = 5.5;             //
 y_carriage_triangle_offset       = 10;              // inner offset
 y_carriage_triangle_margin       = [11, 11];        // [x, y]
 y_carriage_thumbwheel_radius     = 10;
 
-y_carriage_belt_holder_offset        = 2;     // offset position from y carriage axis (issue#13)
+y_carriage_belt_holder_offset        = 6;     // offset position from y carriage axis (issue#13)
 y_carriage_belt_holder_screw_spacing = 16;    // y belt holder holes spacing (axis to axis) 
 y_carriage_lm8_holder_screw_spacing  = 24;    // y lm8uu holder holes spacing (axis to axis) 
 y_carriage_lm8_holder_vspacing       = undef; // lm8uu holder vertical spacing (axis to axis)
