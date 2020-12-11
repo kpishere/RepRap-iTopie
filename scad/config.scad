@@ -148,7 +148,7 @@ y_carriage_belt_holder_screw_spacing = 16;    // y belt holder holes spacing (ax
 y_carriage_lm8_holder_screw_spacing  = 24;    // y lm8uu holder holes spacing (axis to axis) 
 y_carriage_lm8_holder_vspacing       = undef; // lm8uu holder vertical spacing (axis to axis)
 
-y_rod_pockets_size = [8, 20];         // pockets size   [rod diameter, length]
+y_rod_pockets_size = [8, 13];         // pockets size   [rod diameter, length]
 y_rod_spacing      = undef;           // pockets spacing (axis to axis) [undef = auto]
 y_rod_holes_radius = m3_screw_radius; // y rod screws holes radius
 y_rod_holes_margin = 4;               // y rod screws margin (from y rod pocket border)
