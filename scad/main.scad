@@ -66,7 +66,15 @@ if (output_mode != 4) {
             if (output_type == 5) y_carriage();
             if (output_type == 6) triangle();
             if (output_type == 7) feet();
-        }
+        }        
+    }
+    // Reference border 
+    color(pockets_color) {
+        border_size = 1;
+        translate([-workpiece_y,0,0]) square([workpiece_x,border_size]);
+        translate([workpiece_y-border_size,0,0]) square([border_size,workpiece_y]);
+        translate([-workpiece_y,610-border_size,0]) square([workpiece_x,border_size]);
+        translate([-workpiece_y,0,0]) square([border_size,workpiece_y]);
     }
 }
 

@@ -53,7 +53,6 @@ module _z_rod_holder_holes() {
     translate([z_rod_holder_holes_spacing, 0, 0])
         circle(z_rod_holder_holes_radius);
 }
-
 module z_rod_holder_holes() {
     z_motor_pos = [
         (vertical_plate_width - z_motor_spacing) / 2,
@@ -65,6 +64,26 @@ module z_rod_holder_holes() {
         translate([z_motor_pos[1] - z_rod_holder_holes_spacing + z_rod_spacing - z_rod_holder_holes_margin[1], 0, 0])
             _z_rod_holder_holes();
     }         
+}
+module _z_rod_holder_pocket() {
+    circle(m4_washer_radius);
+    translate([z_rod_holder_holes_spacing, 0, 0])
+        circle(m4_washer_radius);
+}
+
+module z_rod_holder_pocket() {
+    z_motor_pos = [
+        (vertical_plate_width - z_motor_spacing) / 2,
+        (vertical_plate_width + z_motor_spacing) / 2
+    ];
+    color(pockets_color) render() intersection() {
+        translate([0, vertical_plate_height - z_rod_holder_holes_margin[0], 0]) {
+            translate([z_motor_pos[0] - z_rod_spacing + z_rod_holder_holes_margin[1], 0, 0])
+                _z_rod_holder_pocket();
+            translate([z_motor_pos[1] - z_rod_holder_holes_spacing + z_rod_spacing - z_rod_holder_holes_margin[1], 0, 0])
+                _z_rod_holder_pocket();
+        }      
+    }   
 }
 
 // triangle pockets
@@ -102,6 +121,8 @@ module vertical_plate_holes() {
 module vertical_plate_pockets() {
     color(pockets_color) 
         if (logo_depth != undef) logo();
+    color(pockets_color)
+        z_rod_holder_pocket();
 }
 
 // vertical plate 2D
@@ -127,9 +148,15 @@ module vertical_plate_3D() {
         render() difference() {
             linear_extrude(h)
                 vertical_plate_2D();
-            translate([0, 0, h - d])
+            translate([0, 0, h-d]) {
                 linear_extrude(d)
                     if (logo_depth != undef) logo();
+            }
+            translate([0, 0, h - pockets_depth]) {
+                color(pockets_color) 
+                    linear_extrude(pockets_depth) 
+                        z_rod_holder_pocket();
+            }
         }
 }
 

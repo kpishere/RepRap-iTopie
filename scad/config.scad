@@ -52,6 +52,9 @@ connector_size  = [20, sheet_thickness]; // pockets/fingers [width, height]
 // ---------------------------------------------------------------- //
 m3_screw_radius = 1.5;
 m4_screw_radius = 2;
+m4_washer_radius = 4;
+workpiece_x = 1220;
+workpiece_y = 610;
 
 // ---------------------------------------------------------------- //
 // horizontal plate

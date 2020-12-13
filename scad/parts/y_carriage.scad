@@ -114,6 +114,12 @@ module y_carriage_lm8_holder_holes() {
     translate([-y_carriage_lm8_holder_screw_spacing / 2, 0, 0]) 
         circle(y_carriage_holes_radius);
 }
+module y_carriage_lm8_holder_pockets() {
+    translate([y_carriage_lm8_holder_screw_spacing / 2, 0, 0]) 
+        circle(m4_washer_radius);
+    translate([-y_carriage_lm8_holder_screw_spacing / 2, 0, 0]) 
+        circle(m4_washer_radius);
+}
 
 // screws holes
 module y_carriage_holes() {
@@ -186,6 +192,14 @@ module y_carriage_holes_pocket() {
     // ergots
     translate(bed_holes_pos[3]) circle(y_carriage_thumbwheel_radius);
     translate(bed_holes_pos[5]) circle(y_carriage_thumbwheel_radius);
+    // lm8uu holes
+    translate(lm8_holder_pos[0]) y_carriage_lm8_holder_pockets();
+    translate(lm8_holder_pos[1]) y_carriage_lm8_holder_pockets();
+    translate(lm8_holder_pos[2]) y_carriage_lm8_holder_pockets();
+    translate(lm8_holder_pos[3]) y_carriage_lm8_holder_pockets();
+    // belt holder
+    translate(belt_holes_pos[0]) circle(m4_washer_radius);
+    translate(belt_holes_pos[1]) circle(m4_washer_radius);
 }
 
 // base
