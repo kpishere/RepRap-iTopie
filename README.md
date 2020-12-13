@@ -1,3 +1,14 @@
+## Notes on this branch
+
+I'm updating the build to accomodate parts readily available today.  Also making simplifications by design changes for ordering.
+
+Changes include :  
+
+- Pockets for screws that enable use of maximum 20mm screws (some were 30mm and these don't come in sets) 
+- Adjust y-carrage to accommodate a 170mm x 170mm build heat plate screw hole pattern (heat plate is actually 235mm x 235mm)
+- Adjust X,Y,Z sizes so that I only need 400mm rods and 400mm leadscrews (this was only 20mm or 40mm changes, why not that from beginning?)
+- caviate: Notice that the Y-plane frame has pockets on one side and _should_ have the logo cut out on the other side but ... I'm not flipping this over to cut pockets, so the logo would be on the wrong side if it is cut like this.  Maybe don't cut the logo, rather 3D print it as a test and stick it on later if you want that.
+
 ## [RepRap iTopie](http://reprap.org/wiki/ITopie)
 Here you will find all the sources files for the [RepRap iTopie](http://reprap.org/wiki/ITopie).<br>The [build manual](http://reprap.org/wiki/ITopie_Build_Manual), [bill of materials](http://reprap.org/wiki/ITopie_Buyers_Guide) and other information is on the [RepRap wiki](http://reprap.org/wiki/ITopie).<br>Thank you.
 
