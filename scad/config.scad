@@ -220,3 +220,71 @@ triangle_max_height = vertical_plate_inner_height - feet_height;
 _triangle_width  = triangle_width && triangle_width <= triangle_max_width  ? triangle_width  : triangle_max_width;
 _triangle_height = triangle_height && triangle_height <= triangle_max_height ? triangle_height : triangle_max_height;
 _triangle_angle  = triangle_angle  ? triangle_angle  : ceil((atan(_triangle_width / _triangle_height) / 4) * 3);
+
+
+// ---------------------------------------------------------------- //
+// x-axis end idler and motor parts
+// ---------------------------------------------------------------- //
+//
+
+// fastener dimensions
+m3_drill4tap_dia=2.5;
+
+// X-axis bar diameter
+rod_dia = 8.2;
+
+// boss diameter around x-axis
+end_boss_dia=rod_dia+8;
+
+// z-axis bushing diameter
+lmuu_dia=15.4;
+
+// z-axis bishing boss diameter
+zboss_dia=19;
+
+// z-screw diameter for brass bushing
+zscrew_dia=10.5;
+
+// z-screw bushing boss diameter
+zscrew_boss_dia=22;
+
+// z-screw bushing boss height
+zscrew_boss_height=26;
+
+// zscrew bushing mount hole offset from centre line of z-screw
+zscrew_bushing_mount_hole_offset=8;
+
+// centre line distance between x-bar higher and lower
+xbar_offset=45;
+
+// centre line distance between z-bar and z-screw
+zscrew_zbar_offset=17;
+
+// motor geometry nema 17
+motor_mount_ctr_spc=31;
+motor_boss_dia=22;
+
+// pully hole centre in y-zxis
+//  offset for idler end
+pully_offset1=38.9;
+//  distance from z-bar axis to centre spacing of motor mounts plus m4 screw hole
+pully_offset2=motor_mount_ctr_spc/2+2*m4_screw_radius+2;
+
+// end idler width
+end_width=46;
+
+// pully diameter and boss
+pully_dia=5.6;
+pully_boss=pully_dia+8;
+
+// wall thickness for plane joining x-boss higher and lower
+wall_thickness=3.2;
+
+//
+// motor end config
+//
+
+// end motor width
+end_motor_width=85;
+end_idler_width=46;
+

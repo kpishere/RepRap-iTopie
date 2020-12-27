@@ -48,3 +48,48 @@ module y_mount(width, height, corner_radius) {
             corner(corner_radius[3]);
     }
 }
+
+
+// bushing with slit in side
+module sleeve(in_dia, out_dia) {
+    difference() {
+        circle(d=out_dia);
+        circle(d=in_dia);
+        translate([-1,-0]) square([2,out_dia],center=false);
+    }
+}
+
+// complete bushing
+module bushing(in_dia, out_dia) {
+    difference() {
+        circle(d=out_dia);
+        circle(d=in_dia);
+    }
+}
+
+// Slot over radius 
+// conditions: d1 < d2, th1 < th2, th2-th1 <= 90deg
+module slot_curved(d1,d2,th1,th2) {
+    union() {
+        difference() {
+            circle(d=d2);
+            circle(d=d1);
+            rotate(th1) square([d2/2,d2/2]);
+            rotate(th2) translate([-d2/2,0]) square([d2/2,d2/2]);
+            rotate(th2) translate([-d2/2,-d2/2]) square([d2,d2/2]);
+        }
+        rotate(th1) translate([0,(d1+d2)/4]) circle(d=(d2-d1)/2);
+        rotate(th2) translate([0,(d1+d2)/4]) circle(d=(d2-d1)/2);
+    }
+}
+
+// fill pattern for wall plate
+module gridpattern(memberW = 2, sqW = 8, iter = 12, r = 1){
+	round2d(0, r)rotate([0, 0, 45])translate([-(iter * (sqW + memberW) + memberW) / 2, -(iter * (sqW + memberW) + memberW) / 2])difference(){
+		square([(iter) * (sqW + memberW) + memberW, (iter) * (sqW + memberW) + memberW]);
+		for (i = [0:iter - 1], j = [0:iter - 1]){
+			translate([i * (sqW + memberW) + memberW, j * (sqW + memberW) + memberW])square([sqW, sqW]);
+		}
+	}
+}
+

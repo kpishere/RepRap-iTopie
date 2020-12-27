@@ -1,0 +1,6 @@
+[submodule "docs/BIGTREETECH-TMC2209-V1.2"]
+	path = docs/BIGTREETECH-TMC2209-V1.2
+	url = https://github.com/bigtreetech/BIGTREETECH-TMC2209-V1.2.git
+[submodule "Marlin"]
+	path = Marlin
+	url = https://github.com/kpishere/Marlin.git

@@ -6,6 +6,7 @@ skp/EnregistrementAuto_iTopie_1.skp
 skp/EnregistrementAuto_iTopie_plates_2D.skp
 .idea/
 build/output/
+private*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -26,7 +27,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-parts/
 sdist/
 var/
 wheels/
