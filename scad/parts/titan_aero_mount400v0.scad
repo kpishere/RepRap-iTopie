@@ -57,9 +57,10 @@ mtr_holes = [
 // z-probe
 mt_boss=12;
 mt_hole=6.15;
-mt_x1=67;
+mt_x1=64.5;
 mt_y1=12;
 mt_ht=15;
+mt_drp=12;
 mt_th=1;
 mt_clr=0.1;
 
@@ -169,43 +170,41 @@ translate([-(mount_xof+mount_rad+2*wall_th+side_air_gap),2*wall_th,-(mtr_dpth+wa
     translate([mt_x1,wall_th,-mt_y1]) 
         rotate([90,0,0]) {
         // probe mount surface
-        difference() {
-            union() {
-                cylinder(wall_th,r=mt_boss);
+        translate([0,0,mt_drp]) {
+            difference() {
+                union() {
+                    cylinder(wall_th*1.5,r=mt_boss);
+                }
+                cylinder(wall_th*1.5,r=mt_hole);
             }
-            cylinder(wall_th,r=mt_hole);
-        }
-        // curved probe wall
-        translate([0,0,-2*mt_ht+wall_th]) difference() {
-            cylinder(2*mt_ht-wall_th,r=(mt_boss));
-            cylinder(2*mt_ht-wall_th,r=(mt_boss-mt_th));
-            translate([-mt_x1+(mtr_xy+2*wall_th+2*side_air_gap),-mt_boss,0]) 
-                cube([2*mt_boss,2*mt_boss,2*mt_ht]);
+            // curved probe wall
+            translate([0,0,-mt_drp]) difference() {
+                cylinder(mt_drp,r=(mt_boss));
+                cylinder(mt_drp,r=(mt_boss-mt_th));
+                translate([-mt_x1+(mtr_xy+2*wall_th+2*side_air_gap),-mt_boss,0]) 
+                    cube([2*mt_boss,2*mt_boss,2*mt_ht]);
+            }
         }
         // Side cowling
         translate([-mt_x1+(mtr_xy+1*wall_th+2*side_air_gap),-mt_boss,-(2*mt_ht-wall_th)]) {
-            difference() {
-                union() {
-                    difference() {
-                        translate([0,0,-mt_ht]) cube([wall_th,2*mt_boss,3*mt_ht]);
-                         translate([-2*wall_th+mt_clr,mt_boss-wall_th,-16]) 
-                            rotate([90,0,90]) difference() {
-                            cylinder(6-mt_clr,r=thmb_rad);
-                        }   
-                    }
-                    difference() {
-                        translate([-2*wall_th+mt_clr,mt_boss-wall_th,-16]) 
-                            rotate([90,0,90]) difference() {
-                            cylinder(3*wall_th-mt_clr,r=thmb_rad);
-                            cylinder(3*wall_th-mt_clr,r=thmb_rad-mt_th);
-                        }
-                        translate([-2*wall_th, -3*wall_th+0.6,-mtr_xy+wall_th-1]) cube([3*wall_th,2*thmb_rad,2*thmb_rad]);
-                        translate([-2*wall_th, -thmb_rad,-mtr_xy+wall_th+10]) cube([3*wall_th,thmb_rad,2*thmb_rad]);
-                    }
+            union() {
+                difference() {
+                    translate([0,0,-mt_ht]) cube([wall_th,2*mt_boss,3*mt_ht]);
+                     translate([-2*wall_th+mt_clr,mt_boss-wall_th,-16]) 
+                        rotate([90,0,90]) difference() {
+                        cylinder(6-mt_clr,r=thmb_rad);
+                    }   
                 }
-                translate([mt_boss-1,mt_boss,0]) 
-                    cylinder(2*mt_ht-wall_th,r=(mt_boss));            
-            }
+                difference() {
+                    translate([-2*wall_th+mt_clr,mt_boss-wall_th,-16]) 
+                        rotate([90,0,90]) difference() {
+                        cylinder(3*wall_th-mt_clr,r=thmb_rad);
+                        cylinder(3*wall_th-mt_clr,r=thmb_rad-mt_th);
+                    }
+                    translate([-2*wall_th, -3*wall_th+0.6,-mtr_xy+wall_th-1]) cube([3*wall_th,2*thmb_rad,2*thmb_rad]);
+                    translate([-2*wall_th, -thmb_rad,-mtr_xy+wall_th+10]) cube([3*wall_th,thmb_rad,2*thmb_rad]);
+                }
+            }            
             // Bottom face cowling
             translate([-4*wall_th,0,2*mt_ht-wall_th]) 
                 cube([5*wall_th,2*thmb_rad,wall_th]);
