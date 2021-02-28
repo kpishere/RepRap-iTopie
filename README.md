@@ -9,6 +9,8 @@ Changes include :
 - Adjust X,Y,Z sizes so that I only need 400mm rods and 400mm leadscrews (this was only 20mm or 40mm changes, why not that from beginning?)
 - caviate: Notice that the Y-plane frame has pockets on one side and _should_ have the logo cut out on the other side but ... I'm not flipping this over to cut pockets, so the logo would be on the wrong side if it is cut like this.  Maybe don't cut the logo, rather 3D print it as a test and stick it on later if you want that.
 
+A wiki page on the build milestones for the [iTopie400+](https://github.com/kpishere/RepRap-iTopie/wiki/General-RepRap-iTopie-build-experience-and-details-of-significance).
+
 
 ## [RepRap iTopie](http://reprap.org/wiki/ITopie)
 Here you will find all the sources files for the [RepRap iTopie](http://reprap.org/wiki/ITopie).<br>The [build manual](http://reprap.org/wiki/ITopie_Build_Manual), [bill of materials](http://reprap.org/wiki/ITopie_Buyers_Guide) and other information is on the [RepRap wiki](http://reprap.org/wiki/ITopie).<br>Thank you.
