@@ -10,6 +10,9 @@
 include <../config.scad>
 use     <../shapes.scad>
 
+// Au: kpishere - Add cut-out for heated bed wiring in acrylic sheet cut to make enclosed chamber
+add_cutout=0;
+
 // local configuration
 motor_pos   = [(horizontal_plate_width - y_motor_mount_width) / 2, horizontal_plate_height - horizontal_plate_borders[0]];
 idler_pos   = [(horizontal_plate_width - y_idler_mount_width) / 2, horizontal_plate_borders[2]];
@@ -44,6 +47,10 @@ module horizontal_base_plate() {
         rounded_square(horizontal_plate_width, horizontal_plate_height, corner_radius = horizontal_plate_outer_corners);
         translate([horizontal_plate_borders[3], horizontal_plate_borders[2], 0])
             rounded_square(horizontal_plate_inner_width, horizontal_plate_inner_height, corner_radius = horizontal_plate_inner_corners);
+    }
+    if(add_cutout == 1) { 
+        // Clearence for headed bed wires -- indent to cut out inside part for enclosure sheild
+        translate([306,250]) rounded_square(22,170,corner_radius=[0,0,0,11]);
     }
     // motor mount
     translate([motor_pos[0], motor_pos[1], 0])
